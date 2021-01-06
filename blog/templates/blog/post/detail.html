@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block title %} 
+{{ post.title }} {% endblock %}
+
+{% block content %}
+<h1> <br>
+    <a href="{{request.META.HTTP_REFERER}}" style="font-size: large;">&#60&#60Volver</a><br>
+    {{ post.title }} <br> </h1>
+<p class="date">
+    Publicado {{ post.publish }} por {{ post.author }}
+</p>
+ <!-- {{ post.body|linebreaks}} -->
+ <p style="color: rgb(73, 73, 73);">
+ {{ post.body|safe }}
+</p>
+<p style="border-top:1px solid #bbb;">
+    {% load social_share %}
+    <h4>Compartir</h4>
+    <a href="{% url "blog:post_share" post.id %}"> Email </a>
+    {% post_to_facebook post.get_absolute_url "Facebook" %}
+    {% post_to_twitter post.body|truncatewords:30 post.get_absolute_url "Twitter" %}
+</p>
+{% endblock %}

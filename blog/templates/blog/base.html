@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/gif" sizes="16x16">
+</head>
+
+<body id="page-wraper">
+
+    <div style="margin: 0 auto;">
+        <div id="content">
+            <span style="width: 90%;">
+                {% block content %}
+                {% endblock %}
+            </span>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <div><h2>
+            <br>
+            <a href="https://www.linkedin.com/in/brayan-nedzib-sastoque-rangel-08aba7116/" target="_blank"  style="color: #ffffff;">LinkedIn</a>
+            ||
+            <a href="https://twitter.com/Ned_zib" target="_blank"  style="color: #ffffff;">Twitter</a> ||
+            <a href="https://github.com/Ned-zib" target="_blank"  style="color: #ffffff;">Github</a> ||
+            <a href="https://www.hackster.io/Ned-zib" target="_blank"  style="color: #ffffff;">Hackster</a>
+        </h2></div>
+        
+        <h6>Usando la tecnología <a href="https://www.djangoproject.com/" target="_blank" style="color: rgb(132, 216, 132);">Django</a>,
+            Hecho con &#60&#51 por Nedzib. </h6>
+        <a href="nedzib.me" style="font-size: medium; color: white;">nedzib.me</a>
+
+            <br><br>
+    </footer>
+
+</body>
+
+</html>
